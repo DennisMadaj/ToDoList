@@ -2,20 +2,55 @@
 <html lang="en">
   <head>
     <title>TodoList</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
     <div class="content">
-      <h1 class="heading">Your TodoList 📓</h1>
+      <h1 class="heading">TodoList </h1>
       <br />
 
       <br />
-      <label for="name" class="input headliner"> Write Task here:</label>
+      <label for="name" class="input headliner"> Whrite your Task here:</label>
       <input type="text" id="input" input="input" class="input" />
       <button type="button" onclick="showInputValue()" class="button">
-        Add Task
+        +
       </button>
-      <br />
+      <p></p>
+<div class="container">
+<table border="1">
+        <thead>
+            <tr class="column">
+                <th>ToDo</th>
+                <th>Done</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Test 1</td>
+                <td>Test 1</td>
+               
+            </tr>
+            <tr>
+                <td>Test 2</td>
+                <td>Test 2</td>
+               
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+</body>
+
+
+
+
+
+
+      <!--
+
       <button id="remove" class="button">Remove Task</button>
       <button class="Complete button" onclick="completeTask()" >Complete Task</button>
       <ul id="resultList"></ul>
@@ -26,6 +61,7 @@
       <ul id="newListItem"></ul>
       
     </p>
+    -->
     <footer>
       <div class="footer">This Website is made with Love for Programming</div>
     </footer>
