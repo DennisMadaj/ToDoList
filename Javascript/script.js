@@ -1,34 +1,48 @@
 function showInputValue() {
   const inputField = document.getElementById("input");
-  const inputValue = inputField.value;
+  const inputValue = inputField.value.trim();
+
+  if (inputValue === "") {
+    alert("Please enter a valid value!");
+    return;
+  }
 
   const listItem = document.createElement("li");
   listItem.textContent = inputValue;
 
-  // Store the value in a data attribute (optional, based on requirement)
+  // Store the value in a data attribute
   listItem.setAttribute("data-value", inputValue);
 
-  // Append List Element to Ul Element
+  // Append the list element to the UL element
   const resultList = document.getElementById("resultList");
   resultList.appendChild(listItem);
+
+  // Clear the input field
+  inputField.value = "";
 }
 
-/*
 const removeItem = document.getElementById("remove");
 removeItem.addEventListener("click", function () {
   const inputField = document.getElementById("input");
-  const inputValue = inputField.value;
+  const inputValue = inputField.value.trim();
   const resultList = document.getElementById("resultList");
   const listItems = resultList.getElementsByTagName("li");
+  let itemFound = false;
 
   for (let i = 0; i < listItems.length; i++) {
     if (listItems[i].textContent === inputValue) {
       listItems[i].remove();
+      itemFound = true;
       break;
-    } else {
-      console.log("Item not found");
     }
   }
+
+  if (!itemFound) {
+    console.log("Item not found");
+  }
+
+  // Clear the input field
+  inputField.value = "";
 });
 
 function completeTask() {
@@ -36,18 +50,9 @@ function completeTask() {
   const listItems = valueContainer.getElementsByTagName("li");
 
   for (let i = 0; i < listItems.length; i++) {
-    const value = listItems[i].getAttribute("data-value");
-    console.log(value);
-
-    // Create a new list item
-    const newListItem = document.createElement("li");
-
-    // Set the text content to the value
-    newListItem.textContent = value;
-
-    // Append the new list item to the ul element
-    valueContainer.appendChild(newListItem);
+    if (!listItems[i].classList.contains("completed")) {
+      listItems[i].classList.add("completed"); // Add a "completed" class
+      listItems[i].style.textDecoration = "line-through"; // Optional: Visual differentiation
+    }
   }
 }
-
-*/
