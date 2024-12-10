@@ -13,6 +13,7 @@ function showInputValue() {
   resultList.appendChild(listItem);
 }
 
+/*
 const removeItem = document.getElementById("remove");
 removeItem.addEventListener("click", function () {
   const inputField = document.getElementById("input");
@@ -48,3 +49,5 @@ function completeTask() {
     valueContainer.appendChild(newListItem);
   }
 }
+
+*/
